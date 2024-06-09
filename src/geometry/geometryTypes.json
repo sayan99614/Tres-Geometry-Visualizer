@@ -1,0 +1,475 @@
+{
+  "geometryTypes": [
+    {
+      "name": "PlaneGeometry",
+      "properties": [
+        {
+          "name": "width",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "max": 30,
+          "description": "Radius of the sphere"
+        },
+        {
+          "name": "height",
+          "type": "integer",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "max": 30,
+          "description": "Number of horizontal segments"
+        },
+        {
+          "name": "widthSegments",
+          "type": "integer",
+          "control": "range",
+          "min": 0,
+          "max": 30,
+          "description": "Number of vertical segments",
+          "default": 16
+        },
+        {
+          "name": "heightSegments",
+          "type": "number",
+          "description": "Starting angle for horizontal segments (default 0)",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "max": 30
+        },
+        {
+          "name": "phiLength",
+          "type": "number",
+          "control": "range",
+          "min": 0,
+          "max": 30,
+          "description": "Length of the horizontal segments (default Math.PI * 2)",
+          "default": "Math.PI * 2"
+        },
+        {
+          "name": "thetaStart",
+          "type": "number",
+          "control": "range",
+          "min": 0,
+          "max": 30,
+          "description": "Starting angle for vertical segments (default 0)",
+          "default": 0
+        },
+        {
+          "name": "thetaLength",
+          "type": "number",
+          "control": "range",
+          "min": 0,
+          "max": 30,
+          "description": "Length of the vertical segments (default Math.PI)",
+          "default": "Math.PI"
+        }
+      ]
+    },
+    {
+      "name": "BoxGeometry",
+      "properties": [
+        {
+          "name": "width",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "max": 30,
+          "description": "Width of the box"
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "max": 30,
+          "description": "Height of the box"
+        },
+        {
+          "name": "depth",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "max": 30,
+          "description": "Depth of the box"
+        },
+        {
+          "name": "widthSegments",
+          "type": "integer",
+          "control": "range",
+          "min": 0,
+          "max": 30,
+          "description": "Number of segments defining the width",
+          "default": 1
+        },
+        {
+          "name": "heightSegments",
+          "type": "integer",
+          "control": "range",
+          "min": 0,
+          "max": 30,
+          "description": "Number of segments defining the height",
+          "default": 1
+        },
+        {
+          "name": "depthSegments",
+          "control": "range",
+          "min": 0,
+          "max": 30,
+          "type": "integer",
+          "description": "Number of segments defining the depth",
+          "default": 1
+        }
+      ]
+    },
+    {
+      "name": "CircleGeometry",
+      "properties": [
+        {
+          "name": "radius",
+          "type": "number",
+          "control": "range",
+          "default": 8,
+          "min": 1,
+          "description": "Radius of the circle"
+        },
+        {
+          "name": "segments",
+          "type": "integer",
+          "control": "range",
+          "default": 32,
+          "min": 1,
+          "description": "Number of segments used to approximate the circle"
+        },
+        {
+          "name": "thetaStart",
+          "type": "number",
+          "control": "range",
+          "default": 0,
+          "description": "Start angle for the first segment"
+        },
+        {
+          "name": "thetaLength",
+          "type": "number",
+          "control": "range",
+          "default": 6.283185307179586,
+          "description": "The central angle of the circular sector"
+        }
+      ]
+    },
+    {
+      "name": "ConeGeometry",
+      "properties": [
+        {
+          "name": "radius",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "description": "Radius of the base of the cone"
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "description": "Height of the cone"
+        },
+        {
+          "name": "radialSegments",
+          "type": "integer",
+          "control": "range",
+          "default": 8,
+          "min": 3,
+          "description": "Number of radial segments around the cone"
+        },
+        {
+          "name": "heightSegments",
+          "type": "integer",
+          "control": "range",
+          "default": 1,
+          "min": 1,
+          "description": "Number of segments along the height of the cone"
+        },
+        {
+          "name": "openEnded",
+          "type": "boolean",
+          "control": "checkbox",
+          "default": false,
+          "description": "Whether the cone is open-ended or not"
+        },
+        {
+          "name": "thetaStart",
+          "type": "number",
+          "control": "range",
+          "default": 0,
+          "description": "Start angle for the first segment"
+        },
+        {
+          "name": "thetaLength",
+          "type": "number",
+          "control": "range",
+          "default": 9,
+          "description": "The central angle of the circular sector"
+        }
+      ]
+    },
+    {
+      "name": "DodecahedronGeometry",
+      "properties": [
+        {
+          "name": "radius",
+          "type": "number",
+          "control": "range",
+          "default": 2,
+          "min": 0,
+          "max": 30,
+          "description": "Radius of the dodecahedron"
+        },
+        {
+          "name": "detail",
+          "type": "integer",
+          "control": "range",
+          "default": 0,
+          "min": 0,
+          "max": 3,
+          "description": "Level of detail. Higher values create more geometry"
+        }
+      ]
+    },
+    {
+      "name": "OctahedronGeometry",
+      "properties": [
+        {
+          "name": "radius",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "max": 9,
+          "description": "Radius of the octahedron"
+        },
+        {
+          "name": "detail",
+          "type": "integer",
+          "control": "range",
+          "default": 0,
+          "min": 0,
+          "max": 3,
+          "description": "Level of detail. Higher values create more geometry"
+        }
+      ]
+    },
+    {
+      "name": "RingGeometry",
+      "properties": [
+        {
+          "name": "innerRadius",
+          "type": "number",
+          "control": "range",
+          "default": 0.5,
+          "min": 0,
+          "description": "Inner radius of the ring"
+        },
+        {
+          "name": "outerRadius",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "description": "Outer radius of the ring"
+        },
+        {
+          "name": "thetaSegments",
+          "type": "integer",
+          "control": "range",
+          "default": 32,
+          "min": 1,
+          "description": "Number of segments along the circumference"
+        },
+        {
+          "name": "phiSegments",
+          "type": "integer",
+          "control": "range",
+          "default": 1,
+          "min": 1,
+          "description": "Number of segments along the height"
+        },
+        {
+          "name": "thetaStart",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "description": "Start angle for the first segment"
+        },
+        {
+          "name": "thetaLength",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "description": "The central angle of the circular sector"
+        }
+      ]
+    },
+    {
+      "name": "SphereGeometry",
+      "properties": [
+        {
+          "name": "radius",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "description": "Radius of the sphere"
+        },
+        {
+          "name": "widthSegments",
+          "type": "integer",
+          "control": "range",
+          "default": 8,
+          "min": 3,
+          "description": "Number of horizontal segments"
+        },
+        {
+          "name": "heightSegments",
+          "type": "integer",
+          "control": "range",
+          "default": 6,
+          "min": 2,
+          "description": "Number of vertical segments"
+        },
+        {
+          "name": "phiStart",
+          "type": "number",
+          "control": "range",
+          "default": 0,
+          "description": "Start angle for horizontal rotation"
+        },
+        {
+          "name": "phiLength",
+          "type": "number",
+          "control": "range",
+          "default": "Math.PI *2",
+          "description": "The central angle of the horizontal circle"
+        },
+        {
+          "name": "thetaStart",
+          "type": "number",
+          "control": "range",
+          "default": 0,
+          "description": "Start angle for vertical rotation"
+        },
+        {
+          "name": "thetaLength",
+          "type": "number",
+          "control": "range",
+          "default": " Math.PI",
+          "description": "The central angle of the vertical circle"
+        }
+      ]
+    },
+    {
+      "name": "TorusGeometry",
+      "properties": [
+        {
+          "name": "radius",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "description": "Radius of the torus"
+        },
+        {
+          "name": "tube",
+          "type": "number",
+          "control": "range",
+          "default": 0.4,
+          "min": 0,
+          "description": "Radius of the tube"
+        },
+        {
+          "name": "radialSegments",
+          "type": "integer",
+          "control": "range",
+          "default": 8,
+          "min": 3,
+          "description": "Number of segments along the torus circumference"
+        },
+        {
+          "name": "tubularSegments",
+          "type": "integer",
+          "control": "range",
+          "default": 6,
+          "min": 3,
+          "description": "Number of segments along the tube circumference"
+        },
+        {
+          "name": "arc",
+          "type": "number",
+          "control": "range",
+          "default": "Math.PI * 2",
+          "description": "Central angle of the torus"
+        }
+      ]
+    },
+    {
+      "name": "TorusKnotGeometry",
+      "properties": [
+        {
+          "name": "radius",
+          "type": "number",
+          "control": "range",
+          "default": 1,
+          "min": 0,
+          "description": "Radius of the torus knot"
+        },
+        {
+          "name": "tube",
+          "type": "number",
+          "control": "range",
+          "default": 0.4,
+          "min": 0,
+          "description": "Radius of the tube"
+        },
+        {
+          "name": "tubularSegments",
+          "type": "integer",
+          "control": "range",
+          "default": 64,
+          "min": 3,
+          "description": "Number of segments along the tube circumference"
+        },
+        {
+          "name": "radialSegments",
+          "type": "integer",
+          "control": "range",
+          "default": 8,
+          "min": 3,
+          "description": "Number of segments along the torus knot circumference"
+        },
+        {
+          "name": "p",
+          "type": "integer",
+          "control": "range",
+          "default": 2,
+          "min": 1,
+          "description": "Number of windings around the torus"
+        },
+        {
+          "name": "q",
+          "type": "integer",
+          "control": "range",
+          "default": 3,
+          "min": 2,
+          "description": "Number of windings around the axis of the torus"
+        }
+      ]
+    }
+  ]
+}
